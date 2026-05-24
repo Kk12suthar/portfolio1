@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/about/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/about/images/:path*", "destination": "/images/:path*" },
+    { "source": "/about/videos/:path*", "destination": "/videos/:path*" },
     { "source": "/about", "destination": "/index.html" },
     { "source": "/about/:path*", "destination": "/index.html" }
   ]

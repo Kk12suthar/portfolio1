@@ -138,7 +138,7 @@ export const heroConfig: HeroConfig = {
 }
 
 export const manifestoConfig: ManifestoConfig = {
-  videoPath: 'videos/about-section-video.mp4',
+  videoPath: '/about/videos/about-section-video.mp4',
   text: 'I am an AI engineer currently at Accenture where I own and maintain production LLM and VLM systems that automate complex enterprise workflows. I have spent the last two years in the gap between what AI can do in a notebook and what it takes to make it reliable in production. That gap is where I find the most interesting problems. Outside of work I build things independently because I genuinely enjoy it, not to pad a resume. My current project Transformer is a live multi-agent data transformation platform that eliminates the need for Excel skills or coding knowledge for structured data workflows entirely.',
   sectionLabel: 'WHO I AM',
 }
@@ -161,7 +161,7 @@ export const experienceConfig: ExperienceConfig = {
       status: 'SEP 2025 · PRESENT',
       description: 'Led migration from computer vision pipeline to full LLM/VLM architecture using GPT-4 and Gemini. Pushed complex workflow accuracy from 65-70% to 85% and standard flows to 99%. Reduced BPMN diagram creation from 20-30 minutes to under 60 seconds. Fine-tuned open-source LLMs via HuggingFace and Ollama with LoRA and PEFT for domain-specific tasks.',
       tags: ['GPT-4', 'Gemini', 'FastAPI', 'HuggingFace', 'Ollama', 'LoRA', 'PEFT'],
-      image: 'images/experience-accenture-1.jpg',
+      image: '/about/images/experience-accenture-1.jpg',
     },
     {
       slug: 'accenture-ml',
@@ -170,7 +170,7 @@ export const experienceConfig: ExperienceConfig = {
       status: 'FEB 2024 · AUG 2025',
       description: 'Built YOLOv9 pipeline for BPMN element detection achieving 98% accuracy. Combined OCR for text extraction and custom spatial algorithms to reconstruct sequence flows and auto-fill missing BPMN standards. Work recognised by leadership. Reduced manual diagram creation from 20-30 minutes to under 60 seconds.',
       tags: ['YOLOv9', 'OCR', 'OpenCV', 'FastAPI', 'Python'],
-      image: 'images/experience-accenture-2.jpg',
+      image: '/about/images/experience-accenture-2.jpg',
     },
   ],
 }
@@ -185,12 +185,12 @@ export const transformerProject = {
     { label: 'LIVE DEMO →', href: 'https://transformer-blue.vercel.app' },
     { label: 'VIEW CODE →', href: 'https://github.com' },
   ],
-  image: 'images/experience-transformer.png',
+  image: '/about/images/experience-transformer.png',
 }
 
 export const observationConfig: ObservationConfig = {
   sectionLabel: 'TRANSFORMER · LIVE',
-  videoPath: 'videos/projects-transformer-video.mp4',
+  videoPath: '/about/videos/projects-transformer-video.mp4',
   statusText: 'PLATFORM STATUS: ACTIVE',
   overlayText: 'TRANSFORMED 1,247 FILES TODAY',
 }
@@ -200,10 +200,10 @@ export const archivesConfig: ArchivesConfig = {
   vaultTitle: 'VIEW ALL SKILLS',
   closeText: 'CLOSE',
   items: [
-    { src: 'images/skill-backend.png', label: 'CORE BACKEND' },
-    { src: 'images/skill-agentic.png', label: 'AGENTIC AI' },
-    { src: 'images/skill-frontend.png', label: 'FRONTEND' },
-    { src: 'images/skill-devops.png', label: 'CLOUD & DEVOPS' },
+    { src: '/about/images/skill-backend.png', label: 'CORE BACKEND' },
+    { src: '/about/images/skill-agentic.png', label: 'AGENTIC AI' },
+    { src: '/about/images/skill-frontend.png', label: 'FRONTEND' },
+    { src: '/about/images/skill-devops.png', label: 'CLOUD & DEVOPS' },
   ],
 }
 
