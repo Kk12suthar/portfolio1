@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { experienceConfig, transformerProject } from '../config';
+import { experienceConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,19 +41,7 @@ export default function Experience() {
     return () => ctx.revert();
   }, []);
 
-  const allItems = [
-    ...experienceConfig.items,
-    {
-      slug: 'transformer',
-      name: transformerProject.name,
-      subtitle: transformerProject.subtitle,
-      status: transformerProject.status,
-      description: transformerProject.description,
-      tags: transformerProject.tags,
-      ctas: transformerProject.ctas,
-      image: transformerProject.image,
-    },
-  ];
+  const allItems = experienceConfig.items;
 
   if (!experienceConfig.sectionLabel && allItems.length === 0) {
     return null;
@@ -74,7 +62,7 @@ export default function Experience() {
           {experienceConfig.sectionLabel}
         </p>
         <h2 className="section-headline experience-reveal" style={{ margin: 0, fontSize: '3.2rem' }}>
-          ENGINEERED EXPERIENCES
+          PRODUCTION EXPERIENCE
         </h2>
       </div>
 

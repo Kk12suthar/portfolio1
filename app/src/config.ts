@@ -46,20 +46,13 @@ export interface ExperienceCard {
   description: string
   tags: string[]
   ctas?: { label: string; href: string }[]
-  image: string
+  image?: string
   slug: string
 }
 
 export interface ExperienceConfig {
   sectionLabel: string
   items: ExperienceCard[]
-}
-
-export interface ObservationConfig {
-  sectionLabel: string
-  videoPath: string
-  statusText: string
-  overlayText: string
 }
 
 export interface ArchiveItem {
@@ -115,6 +108,7 @@ export const navigationConfig: NavigationConfig = {
     { label: 'ABOUT', href: '#about' },
     { label: 'EXPERIENCE', href: '#experience' },
     { label: 'PROJECTS', href: '#projects' },
+    { label: 'ARCHITECTURE', href: '#architecture' },
     { label: 'SKILLS', href: '#skills' },
   ],
 }
@@ -126,7 +120,7 @@ export const heroConfig: HeroConfig = {
   supportingNotes: [
     'Full Stack LLM Development Analyst at Accenture.',
     'Production agentic AI. Real results.',
-    'Currently building Transformer, an autonomous multi-agent data transformation platform.',
+    'Currently building Event Horizon, a production agentic data workspace deployed on GCP.',
   ],
   ctaPrimary: { label: 'VIEW MY WORK', href: '#projects' },
   ctaSecondary: { label: 'GET IN TOUCH', href: '#contact' },
@@ -139,7 +133,7 @@ export const heroConfig: HeroConfig = {
 
 export const manifestoConfig: ManifestoConfig = {
   videoPath: '/about/videos/about-section-video.mp4',
-  text: 'I am an AI engineer currently at Accenture where I own and maintain production LLM and VLM systems that automate complex enterprise workflows. I have spent the last two years in the gap between what AI can do in a notebook and what it takes to make it reliable in production. That gap is where I find the most interesting problems. Outside of work I build things independently because I genuinely enjoy it, not to pad a resume. My current project Transformer is a live multi-agent data transformation platform that eliminates the need for Excel skills or coding knowledge for structured data workflows entirely.',
+  text: 'I am an AI engineer at Accenture, where I build and maintain production LLM and VLM systems for complex enterprise workflows. I work in the gap between what AI can do in a notebook and what it takes to make it reliable, observable, and safe in production. Outside work, I build agentic systems end to end. Event Horizon is my latest project: a live data workspace that carries users from preparation to grounded visualization and publishable reports. Transformer remains a separate Google ADK and RAG platform for natural-language data transformation.',
   sectionLabel: 'WHO I AM',
 }
 
@@ -147,7 +141,7 @@ export const aboutConfig: AboutConfig = {
   stats: [
     { number: '2+', label: 'YEARS PRODUCTION AI' },
     { number: '99%', label: 'ACCURACY ON STANDARD FLOWS' },
-    { number: '1', label: 'LIVE AGENTIC PLATFORM DEPLOYED' },
+    { number: '2', label: 'LIVE AGENTIC PLATFORMS' },
   ],
 }
 
@@ -168,32 +162,41 @@ export const experienceConfig: ExperienceConfig = {
       name: 'ACCENTURE',
       subtitle: 'ASSOCIATE SOFTWARE ENGINEER AI/ML',
       status: 'FEB 2024 · AUG 2025',
-      description: 'Built YOLOv9 pipeline for BPMN element detection achieving 98% accuracy. Combined OCR for text extraction and custom spatial algorithms to reconstruct sequence flows and auto-fill missing BPMN standards. Work recognised by leadership. Reduced manual diagram creation from 20-30 minutes to under 60 seconds.',
-      tags: ['YOLOv9', 'OCR', 'OpenCV', 'FastAPI', 'Python'],
+      description: 'Built a YOLOv7 pipeline for BPMN element detection, reaching 70% accuracy on medium-complexity flows and 80% on moderately harder flows. Combined OCR with spatial algorithms to reconstruct sequence flows, complete missing BPMN standards, and reduce manual diagram creation from 20-30 minutes to under 60 seconds.',
+      tags: ['YOLOv7', 'OCR', 'OpenCV', 'FastAPI', 'Python'],
       image: '/about/images/experience-accenture-2.jpg',
     },
   ],
 }
 
-export const transformerProject = {
+export const transformerProject: ExperienceCard = {
+  slug: 'transformer',
   name: 'TRANSFORMER',
   subtitle: 'AUTONOMOUS MULTI-AGENT DATA TRANSFORMATION PLATFORM',
   status: 'LIVE',
-  description: 'A production multi-agent platform that takes raw CSV and Excel files and transforms them through plain English instructions. No SQL knowledge, no Excel skills, no coding required. Agents built on Google ADK handle parsing, cleaning, and transformation autonomously through a secure MCP tool with role-based database access. What previously took 30 to 60 minutes of manual work happens in seconds.',
-  tags: ['Python', 'FastAPI', 'Google ADK', 'MCP', 'React', 'TypeScript', 'PostgreSQL', 'OpenTelemetry', 'Langfuse', 'GitHub Actions'],
+  description: 'A Google ADK multi-agent platform that parses, cleans, and transforms CSV or Excel data from natural-language instructions. A semantic RAG pipeline uses Hugging Face embeddings and FAISS to ground schema-aware SQL, while MCP and A2A protocols coordinate secure tool execution. OpenTelemetry, Langfuse, DeepEval, and ADK Evals cover observability and quality.',
+  tags: ['Google ADK', 'A2A', 'MCP', 'RAG', 'FAISS', 'FastAPI', 'PostgreSQL', 'OpenTelemetry', 'Langfuse'],
   ctas: [
-    { label: 'LIVE DEMO →', href: 'https://transformer-blue.vercel.app' },
-    { label: 'VIEW CODE →', href: 'https://github.com' },
+    { label: 'OPEN LIVE', href: 'https://transformer-blue.vercel.app' },
+    { label: 'VIEW CODE', href: 'https://github.com/Kk12suthar/Transformer' },
   ],
   image: '/about/images/experience-transformer.png',
 }
 
-export const observationConfig: ObservationConfig = {
-  sectionLabel: 'TRANSFORMER · LIVE',
-  videoPath: '/about/videos/projects-transformer-video.mp4',
-  statusText: 'PLATFORM STATUS: ACTIVE',
-  overlayText: 'TRANSFORMED 1,247 FILES TODAY',
+export const eventHorizonProject: ExperienceCard = {
+  slug: 'event-horizon',
+  name: 'EVENT HORIZON',
+  subtitle: 'AGENTIC DATA PREPARATION, VISUALIZATION & REPORTING WORKSPACE',
+  status: 'LIVE ON GCP',
+  description: 'A full-stack data workspace built around one typed LangGraph flow and a surface-scoped tool registry. Prepare creates validated tables without mutating uploaded sources, Visualize produces grounded charts and KPIs, and Publish composes evidence-backed reports. FastAPI streaming, PostgreSQL, RBAC, folder and session isolation, guarded SQL, Docker, Caddy TLS, and GCP complete the production system.',
+  tags: ['LangGraph', 'MCP', 'LLM Tool Calling', 'FastAPI', 'PostgreSQL', 'RBAC', 'Docker', 'GCP', 'Caddy'],
+  ctas: [
+    { label: 'OPEN LIVE', href: 'https://eventhorizon-35-223-47-158.sslip.io' },
+    { label: 'VIEW CODE', href: 'https://github.com/Kk12suthar/Event-horizon' },
+  ],
 }
+
+export const portfolioProjects: ExperienceCard[] = [eventHorizonProject, transformerProject]
 
 export const archivesConfig: ArchivesConfig = {
   sectionLabel: 'WHAT I WORK WITH',
@@ -202,7 +205,7 @@ export const archivesConfig: ArchivesConfig = {
   items: [
     { src: '/about/images/skill-backend.png', label: 'CORE BACKEND' },
     { src: '/about/images/skill-agentic.png', label: 'AGENTIC AI' },
-    { src: '/about/images/skill-frontend.png', label: 'FRONTEND' },
+    { src: '/about/images/skill-frontend.png', label: 'COMPUTER VISION' },
     { src: '/about/images/skill-devops.png', label: 'CLOUD & DEVOPS' },
   ],
 }
@@ -210,7 +213,7 @@ export const archivesConfig: ArchivesConfig = {
 export const achievementsConfig: AchievementsConfig = {
   sectionLabel: 'BY THE NUMBERS',
   stats: [
-    { value: '98%', label: 'YOLOv9 DETECTION ACCURACY ON PROPRIETARY BPMN DATASETS' },
+    { value: '80%', label: 'YOLOV7 ACCURACY ON MODERATELY HARDER BPMN FLOWS' },
     { value: '99%', label: 'LLM PIPELINE ACCURACY ON STANDARD ENTERPRISE WORKFLOWS' },
     { value: '85%', label: 'ACCURACY ON COMPLEX WORKFLOWS AFTER GENAI MIGRATION' },
     { value: '60 SEC', label: 'BPMN DIAGRAM CREATION TIME, DOWN FROM 20-30 MINUTES' },

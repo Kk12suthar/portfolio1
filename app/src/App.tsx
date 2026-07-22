@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { siteConfig } from './config';
 import Hero from './sections/Hero';
 import Experience from './sections/Experience';
-import Observation from './sections/Observation';
+import Projects from './sections/Projects';
+import EventHorizonArchitecture from './sections/EventHorizonArchitecture';
 import Archives from './sections/Archives';
 import Achievements from './sections/Achievements';
 import Contact from './sections/Contact';
@@ -33,7 +34,8 @@ function App() {
         {/* Anchor for About section links (which transitions in Hero storytelling pin) */}
         <div id="about" />
         <Experience />
-        <Observation />
+        <Projects />
+        <EventHorizonArchitecture />
         <Archives />
         <Achievements />
         <Contact />
